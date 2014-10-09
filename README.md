@@ -1,4 +1,5 @@
-QuaZi-syntax
-============
+# Emerald Syntax
 
-A simple Atom theme for those who don't want quite so much color. And those who like green.
+A simple Atom theme for those who don't want quite so many colors. And those who like green.
+
+![Screenshot]()
