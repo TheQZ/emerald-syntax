@@ -1,7 +1,7 @@
 {
   "name": "emerald-syntax",
   "theme": "syntax",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Emerald Syntax - A simple Atom theme for those who don't want quite so many colors. And those who like green.",
   "repository": {
     "type": "git",
@@ -17,5 +17,7 @@
     "url": "https://github.com/TheQuasiZillionaire/emerald-syntax/issues"
   },
   "homepage": "https://github.com/TheQuasiZillionaire/emerald-syntax",
-  "_id": "emerald-syntax@0.1.0",
+  "_id": "emerald-syntax@0.0.0",
+  "_resolved": "C:\\Users\\Jasper\\AppData\\Local\\Temp\\d-11499-5768-rpc57k\\package.tgz",
+  "_from": "C:\\Users\\Jasper\\AppData\\Local\\Temp\\d-11499-5768-rpc57k\\package.tgz"
 }
