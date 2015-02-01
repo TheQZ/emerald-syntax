@@ -1,13 +1,7 @@
 @import "syntax-variables";
 
-// Editor background & font colors
-.editor-colors {
-  background-color: @background;
-  color: @font-color;
-}
-
 // Main code editor styles
-.editor {
+.atom-text-editor {
 
   background-color: @background;
   color: @font-color;
@@ -558,13 +552,13 @@
   }
 }
 
-.editor.mini .scroll-view {
+.atom-text-editor[mini] .scroll-view {
   padding-left: 1px;
 }
 
 
 // Plugin-specific styles
-.bracket-matcher {
+.bracket-matcher .region{
   border-bottom: 1px solid @string;
   margin-top: 1px;
 }
