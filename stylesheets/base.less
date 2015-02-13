@@ -1,7 +1,8 @@
 @import "syntax-variables";
 
 // Main code editor styles
-.atom-text-editor {
+atom-text-editor,
+:host {
 
   background-color: @background;
   color: @font-color;
@@ -99,13 +100,13 @@
 }
 
 // Highlight style for search matches
-.editor .search-results .marker .region {
+.atom-text-editor .search-results .marker .region {
   background-color: transparent;
   border: solid 1px @very-light-green;
 }
 
 // Highlight style for currently selected search result
-.editor .search-results .marker.current-result .region {
+.atom-text-editor .search-results .marker.current-result .region {
   background-color: @selected;
   border: solid 1px @very-light-green;
 }
