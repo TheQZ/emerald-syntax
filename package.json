@@ -1,7 +1,7 @@
 {
   "name": "emerald-syntax",
   "theme": "syntax",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Emerald Syntax - An Atom syntax theme for those who don't want quite so many colors. And those who like green.",
   "repository": {
     "type": "git",
