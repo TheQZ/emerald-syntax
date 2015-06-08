@@ -1,0 +1,38 @@
+@import "colors";
+
+// Editor
+@background: #0C100C; // editor background
+@guides: rgba(255,255,255,0.05); // the guides that show where text wraps, etc.
+@cursor-color: @white; //uh... cursor color...
+@selected: @black; // selected background color
+
+// Syntax
+@font-color: @very-light-green; // default editor text
+@comment: @gray; // comments
+@string: @light-green; // 'value' -> var='value', "name.png" or src="name.png"
+@constant: @very-bright-green; // true -> var x = true, {{}} of {{> hbs_include}}
+@variable: @green; // foo -> function(foo), hbs_include -> {{> hbs_include}}, http://dom.com/ of url(http://dom.com/)
+@support: @light-green; // module -> module.exports, color -> color: rgb(0,0,0)
+@entity: @green; // exports of module.exports, <div id= of <div id="#id">, . of .className
+@control: @bright-green; //if -> if a = b
+@keyword: @bright-green; // = -> var a = b, px -> font-size: 13px;
+@storage: @light-green; // var -> var a = b;
+@meta: @font-color; // none -> border: none;
+@function-param: @light-green; // parameters of functions
+@numeric: @green; // numbers
+@class: @green; // css class names
+@id: @green; // css id names
+@tag: @green; // html tags
+@element-attr: @light-green;// style -> <td style="">
+@tag-entity: @light-green; // = -> <td style="">
+@brackets: @light-green; // brackets {}
+@punctuation: @light-green; // ; . #
+
+@error: @red;
+@invisible: rgba(255,255,255,0.05);
+
+// Gutter
+@gutter-text: @gray;
+@gutter-text-highlight: @bright-green;
+@gutter-background: @black;
+@gutter-background-highlight: @black;

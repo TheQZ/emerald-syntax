@@ -1,0 +1,565 @@
+@import "syntax-variables";
+
+// Main code editor styles
+atom-text-editor,
+:host {
+
+  background-color: @background;
+  color: @font-color;
+
+  // Line that designates where text will wrap
+  .wrap-guide {
+    background: @guides;
+  }
+
+  // Line between bracket indentations
+  .indent-guide {
+    color: @guides;
+  }
+
+  .invisible-character {
+    color: @invisible;
+  }
+
+  // Gutter line numbers
+  .gutter {
+
+    background-color: @gutter-background;
+    color: @gutter-text;
+    // border-right: 10px solid @background;
+
+    .line-number {
+
+      // Gutter background
+      background: @gutter-background;
+      color: @gutter-text;
+      padding: 0px;
+
+
+      // Selected block
+      &.cursor-line {
+        background-color: @gutter-background-highlight;
+        color: @gutter-text-highlight;
+        font-weight: 100;
+      }
+
+      // Current active line
+      &.cursor-line-no-selection {
+        background-color: @gutter-background-highlight;
+        color: @gutter-text-highlight;
+        // font-weight: bold;
+      }
+
+    }
+
+    // Hover state for line numbers
+    .line-number:hover {
+      background-color: @gutter-background;
+      color: @gutter-text-highlight;
+    }
+  }
+
+  // Line number for sections that have been collapsed
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: #FFFFFF;
+    background: none;
+  }
+
+  // Invisible Characters
+  .invisible {
+    color: @invisible;
+  }
+
+  // Cursor Color
+  .cursor {
+    border-color: @cursor-color;
+    border-left: solid 1px;
+  }
+
+  // Background of Selected Text
+  .selection .region {
+    background-color: @selected;
+  }
+
+}
+
+// Add left padding to code view
+.scroll-view {
+  padding-left: 3px;
+}
+
+
+
+// Selected line style
+.line.cursor-line {
+  background: none;
+  padding-left: 10px;
+  margin-left: -10px;
+}
+
+// Highlight style for search matches
+.atom-text-editor .search-results .marker .region {
+  background-color: transparent;
+  border: solid 1px @very-light-green;
+}
+
+// Highlight style for currently selected search result
+.atom-text-editor .search-results .marker.current-result .region {
+  background-color: @selected;
+  border: solid 1px @very-light-green;
+}
+
+// Comments
+.comment {
+  color: @comment;
+  background: none;
+}
+
+
+.keyword {
+
+  // @ of @font-face & @media
+  color: @keyword;
+
+  // try, catch, if, else, return (js)
+  &.control {
+    color: @control;
+  }
+
+  // =, +, -, ?, :, !=. &&, in (js)
+  &.operator {
+    color: @keyword;
+  }
+
+  // Unknown modifier
+  &.other.special-method {
+    color: @keyword;
+  }
+
+  // Unknown modifier
+  &.other.unit {
+    color: @keyword;
+  }
+}
+
+
+// Storage
+.storage {
+  color: @storage;
+
+  // var of var a = b;
+  &.modifier {
+    color: @storage;
+  }
+
+}
+
+
+.constant {
+
+  // true, false, null, undefined
+  color: @constant;
+
+  // \ in ("what\'s")
+  &.character.escape {
+    color: @constant;
+  }
+
+  // Numbers
+  &.numeric {
+    color: @numeric;
+  }
+
+  // FFFFFF -> #FFFFFF (css)
+  &.other.color {
+    color: @constant;
+  }
+
+  // Unknown modifier
+  &.other.symbol {
+    color: @constant;
+  }
+}
+
+
+
+.variable {
+
+  // this (js), @varable_name (sass), http://web.com in url(http://web.com), variable in {{variable}} (handlebars)
+  color: @variable;
+
+  // Unknown modifier
+  &.interpolation {
+    color: @variable;
+  }
+
+  // foo & bar in function name(foo, bar)
+  &.parameter.function {
+    color: @function-param;
+  }
+}
+
+
+// Invalid Text
+.invalid.illegal, .invalid.deprecated {
+  background: none;
+  color: @error;
+}
+
+.string {
+
+  .json {
+
+  }
+
+  // 'value' in var='value', "name.png" or src="name.png"  , etc
+  color: @string;
+
+  // Regex - [\da-z] in /-([\da-z])/gi (js)
+  .constant {
+    color: @string;
+  }
+
+  &.regexp {
+
+    // ?:input, select, textarea, button in  /^(?:input|select|textarea|button)$/i,
+    color: @string;
+
+    .constant.character.escape,
+    .source.ruby.embedded,
+    .string.regexp.arbitrary-repitition {
+      color: @string;
+    }
+
+    &.group {
+      color: @string;
+    }
+
+    &.character-class {
+      color: @string;
+    }
+
+    .source.ruby.embedded {
+      color: @string;
+    }
+
+  }
+
+  // site.dir in {{site.dir}}
+  .variable {
+    color: @variable;
+  }
+
+  // Unknown modifier
+  &.other.link {
+    color: @string;
+  }
+}
+
+// String interpolation in Ruby, CoffeeScript, and others
+.source .string {
+  .source,
+  .meta.embedded.line {
+    color: @string;
+  }
+
+  .punctuation.section.embedded {
+    color: @string;
+
+    .source {
+      color: @string;  // Required for the end of embedded strings in Ruby # 716
+    }
+  }
+}
+
+// Miscellaneous punctuation
+.punctuation {
+
+  &.terminator {
+    color: @punctuation;
+  }
+
+  &.separator {
+    color: @punctuation;
+  }
+
+  &.definition {
+
+    color: @punctuation;
+
+    &.comment {
+      color: @comment;
+    }
+
+    // Quotes
+    &.string,
+    &.variable,
+    &.parameters,
+    &.array {
+      color: @string;
+    }
+
+    &.heading,
+    &.identity {
+      color: @font-color;
+    }
+
+    &.bold {
+      color: @font-color;
+      font-style: bold;
+    }
+
+    &.italic {
+      color: @font-color;
+      font-style: italic;
+    }
+  }
+
+  &.section.embedded {
+    color: @font-color;
+  }
+
+}
+
+
+
+.support {
+
+  // background in background: none,
+  color: @support;
+
+  // Support | module -> module.exports
+  &.class {
+    color: @support;
+  }
+
+  &.function  {
+    color: @support; // .log -> console.log, url of url(http://web.com)
+
+    // Unknown modifier
+    &.any-method {
+      color: @support;
+    }
+  }
+
+  // {{}} -> {{ variable }}
+  &.constant {
+    color: @constant;  // none -> text-decoration: none;
+  }
+
+  &.type.property-name.css {
+    color: @support;
+  }
+}
+
+// .class names in css & scss
+.source .entity.name.tag, .source .entity.other.attribute-name, .meta.tag.inline, .meta.tag.inline .entity {
+  color: @class;
+}
+
+  &.tag,
+  &.tag .entity {
+    color: @tag-entity;
+  }
+
+
+.html {
+
+  .string {
+    color: @font-color;
+  }
+
+
+  // Inline elements, e.g. <span>
+  .meta {
+
+
+  }
+
+  .punctuation.definition.tag {
+    color: @tag;
+  }
+
+  .entity {
+
+    &.name.tag {
+      text-decoration: done;
+
+      // Structural elements, e.g. <html>
+      &.structure {
+        color: @tag;
+      }
+
+      // Block level elements, e.g. <div>, <h1>
+      &.block {
+        color: @tag;
+      }
+
+      // Inline elements, e.g. <span>
+      &.script {
+        // color: @tag;
+      }
+
+    }
+
+    &.other {
+      &.attribute-name {
+        color: @element-attr;
+      }
+    }
+
+  }
+
+}
+
+// Entity | exports -> module.exports, <div id= -> <div id="#id">, . -> .className
+.entity {
+
+  color: @entity;
+
+  // console -> console.log (js)
+  &.name.type {
+    color: @entity;
+    text-decoration: none;
+  }
+
+  &.other.inherited-class {
+    color: @entity;
+  }
+
+  // init -> init: function(){} (js)
+  &.name.function {
+    color: @entity;
+  }
+
+  &.name.class, &.name.type.class {
+    color: @entity;
+  }
+
+  &.name.section {
+    color: @entity;
+  }
+
+  // div -> <div> (html), body -> body{} (css)
+  &.name.tag {
+    color: @tag;
+    text-decoration: done;
+  }
+
+
+  // CSS classes
+  &.other.attribute-name {
+    color: @element-attr;
+
+    // CSS ids
+    &.id {
+      color: @id;
+    }
+  }
+}
+
+.meta {
+  & .class {
+    color: @constant;
+  }
+
+  &.link {
+    color: @meta;
+  }
+
+  &.require {
+    color: @meta;
+  }
+
+
+  &.brace {
+
+    // curly braces - {}
+    &.curly {
+      color: @brackets;
+    }
+
+    // parenthesis - ()
+    &.round {
+      color: @font-color;
+    }
+  }
+
+  &.comma {
+    color: @punctuation;
+  }
+
+  // .css files | commas, ([controls]) -> audio:not([controls])
+  &.selector {
+    color: @punctuation;
+  }
+
+  &.separator {
+    background-color: @punctuation;
+    color: @punctuation;
+  }
+}
+
+.none {
+  color: @font-color;
+}
+
+.markup {
+  &.bold {
+    color: @font-color;
+    font-style: bold;
+  }
+
+  &.changed {
+    color: @font-color;
+  }
+
+  &.deleted {
+    color: @font-color;
+  }
+
+  &.italic {
+    color: @font-color;
+    font-style: italic;
+  }
+
+  &.heading .punctuation.definition.heading {
+    color: @font-color;
+  }
+
+  &.inserted {
+    color: @font-color;
+  }
+
+  &.list {
+    color: @font-color;
+  }
+
+  &.quote {
+    color: @font-color;
+  }
+
+  &.raw.inline {
+    color: @font-color;
+  }
+}
+
+.source.gfm .markup {
+  -webkit-font-smoothing: auto;
+  &.heading {
+    color: @font-color;
+  }
+}
+
+.atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+
+
+// Plugin-specific styles
+.bracket-matcher .region{
+  border-bottom: 1px solid @string;
+  margin-top: 1px;
+}
