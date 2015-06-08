@@ -5,5 +5,5 @@
 ## 1.1.1 - Update
 * Fixed deprecated selectors
 
-## 1.1.2 - Update
+## 1.1.4 - Update
 * Fixed deprecations
