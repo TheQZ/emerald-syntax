@@ -1,4 +1,0 @@
-To-Do List:
-
-- Fix wrapping indicator line brightness/opacity (too bright)
-- Fix padding on left of line numbers (too small)
