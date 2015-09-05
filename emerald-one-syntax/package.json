@@ -1,0 +1,14 @@
+{
+  "name": "emerald-one-syntax",
+  "theme": "syntax",
+  "version": "1.1.5",
+  "description": "Emerald Syntax - An Atom syntax theme for those who don't want quite so many colors. And those who like green.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheQZ/emerald-syntax"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  }
+}

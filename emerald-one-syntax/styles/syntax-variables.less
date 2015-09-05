@@ -1,0 +1,56 @@
+@import "colors";
+
+// Official Syntax Variables -----------------------------------
+
+// General colors
+@syntax-text-color:            @syntax-fg; // <-light gray
+@syntax-cursor-color:          @syntax-accent; // <-light blue
+@syntax-selection-color:       darken(@syntax-background-color, 3%);
+@syntax-selection-flash-color: @syntax-accent; // <-light blue
+@syntax-background-color:      @syntax-bg;
+
+// Guide colors
+@syntax-wrap-guide-color:          @syntax-guide;
+@syntax-indent-guide-color:        @syntax-guide;
+@syntax-invisible-character-color: @syntax-guide;
+
+// For find and replace markers
+@syntax-result-marker-color:          @syntax-fg; // <-light gray
+@syntax-result-marker-color-selected: @syntax-accent; // <-light blue
+
+// Gutter colors
+@syntax-gutter-text-color:                darken(@syntax-fg, 40%);
+@syntax-gutter-text-color-selected:       lighten(@syntax-accent, 10%);
+@syntax-gutter-background-color:          darken(@syntax-bg, 1.3%);
+@syntax-gutter-background-color-selected: darken(@syntax-bg, 1.3%);
+
+// For language entity colors
+@syntax-color-variable:   @green; // <-red 1          | @green
+@syntax-color-constant:   @very-bright-green; // <-orange 1       | @very-bright-green
+@syntax-color-property:   @syntax-fg; // <-light gray | @very-light-green
+@syntax-color-value:      @syntax-fg; // <-light gray | @very-light-green
+@syntax-color-function:   @green; // <-blue           | @green
+@syntax-color-method:     @green; // <-blue           | @green
+@syntax-color-class:      @light-green; // <-orange 2     | @light-green
+@syntax-color-keyword:    @bright-green; // <-purple         | @bright-green
+@syntax-color-tag:        @green; // <-red 1          | @green
+@syntax-color-attribute:  @light-green; // <-orange 1       | @light-green
+@syntax-color-import:     @bright-green; // <-purple         | @bright-green
+@syntax-color-snippet:    @light-green; // <-green          | @light-green
+
+// Git colors - For git diff info. i.e. in the gutter
+@syntax-color-renamed:  hsl(208, 100%, 60%);
+@syntax-color-added:    hsl(150,  60%, 54%);
+@syntax-color-modified: hsl(40,   60%, 70%);
+@syntax-color-removed:  hsl(0,    70%, 60%);
+
+// Custom Syntax Variables -----------------------------------
+// Don't use in packages
+
+@syntax-cursor-line: darken(@syntax-background-color, 1.3%); // needs to be semi-transparent to show serach results
+@syntax-bracket-matcher-background-color: darken(@syntax-background-color, 3%);
+
+@syntax-deprecated-fg: darken(@syntax-color-modified, 50%);
+@syntax-deprecated-bg: @syntax-color-modified;
+@syntax-illegal-fg:    white;
+@syntax-illegal-bg:    @syntax-color-removed;
