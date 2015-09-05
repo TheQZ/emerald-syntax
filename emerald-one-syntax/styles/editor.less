@@ -41,6 +41,8 @@ atom-text-editor, // <- remove when Shadow DOM can't be disabled
   }
 
   .gutter {
+    background-color: @syntax-gutter-background-color;
+    margin-right: 7px;
 
     .line-number {
       color: @syntax-gutter-text-color;
@@ -51,7 +53,7 @@ atom-text-editor, // <- remove when Shadow DOM can't be disabled
         background-color: @syntax-gutter-background-color-selected;
       }
       &.cursor-line-no-selection {
-        background-color: @syntax-gutter-background-color;
+        background-color: @syntax-gutter-background-color-selected;
       }
 
       .icon-right {
